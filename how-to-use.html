@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<input type="text" id="input" />
+		<button id="submit">Try</button>
+		<script src="mime.js"></script>
+		<script>
+			window.onload = function() {
+				document.getElementById('submit').onclick = function() {
+					mime.get(document.getElementById('input').value).then(function(mime) {
+						alert(mime);
+					}).catch(function() {
+						alert('Error!');
+					});
+				};
+			};
+		</script>
+	</body>
+</html>
